@@ -1,0 +1,19 @@
+# Tier 1 Static AST Rules (Tree-sitter Bash)
+# Commands here are immediately blocked at Tier 1 before reaching the LLM
+blocked_commands:
+  - rm
+  - sudo
+  - su
+  - mkfs
+  - dd
+  - shutdown
+  - reboot
+  - nc
+  - ncat
+  - nmap
+  - chmod
+  - chown
+
+# High-risk Bash AST node types that Tier 1 will immediately block
+flagged_ast_nodes:
+  - process_substitution   # e.g., <(curl ...)

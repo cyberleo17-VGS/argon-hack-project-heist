@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "run_shell_command|bash|execute.*",
+        "hooks": [
+          {
+            "name": "secops-3tier-mdr",
+            "type": "command",
+            "command": "python3 .gemini/hooks/secops_guard.py",
+            "timeout": 60000
+          }
+        ]
+      }
+    ]
+  }
+}
